@@ -6,21 +6,15 @@ const ctx = canvas.getContext('2d');
 
 // Road image
 const road = new Image();
-road.src = "/images/road.png";
-road.addEventListener("load", () => {
-  ctx.drawImage(road, 0, 0, 500, 700)
-} )
-// // Car image  (player)
-// const car = new Image();
-// car.src = "/images/car.png";
-// car.addEventListener("load", () => {
-//   ctx.drawImage(car, 215, 580, 75, 100)
-// })
+road.src = '/images/road.png';
+road.addEventListener('load', () => {
+  ctx.drawImage(road, 0, 0, 500, 700);
+});
 
-const car = new Component(218, 550, 60, 100, ctx)
+const car = new Component(218, 550, 60, 100, ctx);
 
-// Create the game 
-let game = new Game(ctx, 500, 700, car)
+// Create the game
+let game = new Game(ctx, 500, 700, car);
 
 // Start the game
 
@@ -28,14 +22,17 @@ let game = new Game(ctx, 500, 700, car)
 document.addEventListener('keydown', (e) => {
   switch (e.code) {
     case 'ArrowRight':
-      car.x += 10;
+      if (car.x < 430) {
+        car.x += 13;
+      }
       break;
     case 'ArrowLeft':
-      car.x -= 10;
+      if (car.x > 10) {
+        car.x -= 13;
+      }
       break;
   }
 });
-
 
 window.onload = () => {
   document.getElementById('start-button').onclick = () => {
