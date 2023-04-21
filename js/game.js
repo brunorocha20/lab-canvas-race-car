@@ -59,7 +59,7 @@ class Game {
       this.obstacles[i].draw();
     }
 
-    // update obstacles every 3 seconds = 60secs * 3
+      // update obstacles every 4 seconds = 60secs * 4
     if (this.frames % 240 === 0) {
       // calculate the width of th obstacles
       let minWidth = 75;

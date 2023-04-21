@@ -40,8 +40,3 @@ body button {
     padding: 10px 0px;
 }
 
-#canvas{
-  background-image: url(/images/road.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
