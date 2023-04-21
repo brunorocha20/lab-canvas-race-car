@@ -6,8 +6,6 @@ class Component {
     this.h = h;
     this.ctx = ctx;
     this.car = new Image();
-  /* -------------------------------------------------- */
-    this.hitbox = { x: this.x, y: this.y, w: this.w, h: this.h };
   }
 
   // Drawing the car (player)
@@ -15,22 +13,6 @@ class Component {
     this.car.src = '/images/car.png';
     ctx.drawImage(this.car, this.x, this.y, this.w, this.h);
   }
-
-
-  /* -------------------------------------------------- */
-
-  // Draw the hitbox for debugging purposes (OPTIONAL)
-  drawHitbox() {
-    this.ctx.strokeStyle = 'red';
-    this.ctx.strokeRect(this.hitbox.x, this.hitbox.y, this.hitbox.w, this.hitbox.h);
-  } 
-
-   updateHitbox() {
-    this.hitbox.x = this.x;
-    this.hitbox.y = this.y;
-  }
-  /* --------------------------------------------------- */
-
 
   checkCollision(obstacle) {
     return this.crashWith(obstacle);
